@@ -1,27 +1,24 @@
 import React from 'react';
-import Layout from '../components/Layout';
 
 const Home = () => {
   return (
-    <Layout>
-      <div className="text-center max-w-2xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Napier Mountain Bike Club (NMTB)</h1>
-        <p className="text-lg mb-6">
-          Scotland and mountain biking are a perfect match, just like chips and cheese or mud and rain—they belong together.
-          Whether you've been cycling since before you could walk or are just starting out in mountain biking, NMTB is here
-          to share and nurture a passion for all things on two wheels. What better place to join a mountain bike club than Edinburgh, 
-          with Scotland's top riding destination, the Tweed Valley, right on our doorstep!
+    <div className="bg-cover bg-center min-h-screen p-8" style={{ backgroundImage: 'url(https://imgur.com/qX4GNcP.png)' }}>
+      <div className="bg-gray-800 bg-opacity-75 p-8 rounded-lg max-w-4xl mx-auto text-center">
+        <h1 className="text-4xl font-bold text-white mb-8">Welcome to Napier Mountain Bike Club</h1>
+        <p className="text-gray-300 text-lg leading-relaxed mb-4">
+          Scotland and mountain biking go hand in hand like chips and cheese or mud and rain. One would pretty much be pointless without the other.
         </p>
-        <p className="text-lg mb-6">
-          For the 24/25 season, we’re planning weekly rides at some of the finest destinations across the south of Scotland, 
-          along with the chance for some rides and socials within Edinburgh during the week. 
+        <p className="text-gray-300 text-lg leading-relaxed mb-4">
+          Whether you've cycled since before you could walk or you're just getting started in mountain biking, Napier Mountain Bike Club (NMTB) is a place to share and nurture a passion for all things two wheels.
         </p>
-        <p className="text-lg">
-          If you have any questions, want to share something with us, or simply wish to stay in the loop, 
-          please keep in touch via our social media pages. We hope to see you out on the trails soon!
+        <p className="text-gray-300 text-lg leading-relaxed mb-4">
+          Our plans for 24/25 are to host weekly rides at some fine destinations across the south of Scotland with the opportunity for some rides/socials within Edinburgh during the week as well.
+        </p>
+        <p className="text-gray-300 text-lg leading-relaxed">
+          If you have any questions, would like to share anything with us, or just want to stay in the loop, please stay in touch via our social media pages. We hope to see you soon!
         </p>
       </div>
-    </Layout>
+    </div>
   );
 };
 

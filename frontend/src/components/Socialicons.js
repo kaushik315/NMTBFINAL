@@ -5,7 +5,8 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const SocialIcons = () => {
   return (
-    <div className="fixed left-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 p-4">
+    <div className="fixed lg:left-0 lg:top-1/2 lg:transform lg:-translate-y-1/2 lg:flex lg:flex-col lg:space-y-4 lg:p-4 
+                    left-0 bottom-0 w-full flex justify-center space-x-4 p-4 bg-gray-800 lg:bg-transparent lg:space-x-0 lg:space-y-4">
       <a
         href="https://www.facebook.com/profile.php?id=100063534186211"
         target="_blank"
