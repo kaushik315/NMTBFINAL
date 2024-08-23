@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 const Join = () => {
   return (
     <Layout>
+      <div className="bg-gray-800 bg-opacity-75 p-8 rounded-lg max-w-4xl mx-auto text-center mt-12">
       <div className="container mx-auto text-center py-8">
         <h1 className="text-4xl font-bold mb-6">Join Us</h1>
         <p className="text-gray-200 mb-6">
@@ -15,6 +16,7 @@ const Join = () => {
         >
           Sign Up Now
         </button>
+      </div>
       </div>
     </Layout>
   );

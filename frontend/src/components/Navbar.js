@@ -1,15 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  let lastScrollY = window.scrollY;
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const controlNavbar = () => {
+    if (window.scrollY > lastScrollY) {
+      setShowNavbar(false);
+    } else {
+      setShowNavbar(true);
+    }
+    lastScrollY = window.scrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', controlNavbar);
+
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, []);
+
   return (
-    <nav className="bg-gray-800 p-4 fixed w-full z-20 top-0 left-0">
+    <nav
+      className={`bg-gray-800 p-4 fixed w-full z-20 top-0 left-0 transition-transform duration-300 ${
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" onClick={() => setIsOpen(false)}>
@@ -23,7 +46,21 @@ const Navbar = () => {
             NMTB
           </Link>
         </div>
-        <div className="block lg:hidden">
+        <div className="hidden lg:flex space-x-6">
+          <Link to="/" className="text-white text-lg hover:underline">
+            Home
+          </Link>
+          <Link to="/events" className="text-white text-lg hover:underline">
+            Events
+          </Link>
+          <Link to="/join" className="text-white text-lg hover:underline">
+            Join Us
+          </Link>
+          <Link to="/about" className="text-white text-lg hover:underline">
+            About
+          </Link>
+        </div>
+        <div className="lg:hidden block">
           <button
             onClick={toggleMenu}
             className="text-gray-300 hover:text-white focus:outline-none"
@@ -44,41 +81,43 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div
-          className={`fixed inset-0 bg-gray-900 bg-opacity-95 text-white flex flex-col items-center justify-center z-10 transition-transform duration-300 ${
-            isOpen ? 'translate-x-0' : '-translate-x-full'
-          } lg:hidden`}
-        >
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className="text-3xl py-2 px-4 hover:bg-gray-700 rounded-lg"
-          >
-            Home
-          </Link>
-          <Link
-            to="/events"
-            onClick={() => setIsOpen(false)}
-            className="text-3xl py-2 px-4 hover:bg-gray-700 rounded-lg"
-          >
-            Events
-          </Link>
-          <Link
-            to="/join"
-            onClick={() => setIsOpen(false)}
-            className="text-3xl py-2 px-4 hover:bg-gray-700 rounded-lg"
-          >
-            Join Us
-          </Link>
-          <Link
-            to="/about"
-            onClick={() => setIsOpen(false)}
-            className="text-3xl py-2 px-4 hover:bg-gray-700 rounded-lg"
-          >
-            About
-          </Link>
-        </div>
       </div>
+      {isOpen && (
+        <div
+          className=" inset-0 bg-gray-900 bg-opacity-50 flex flex-col items-center justify-center z-30 p-4"
+        >
+          <div className="flex flex-col items-center space-y-6">
+            <Link
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className="text-4xl font-semibold text-white hover:underline"
+            >
+              Home
+            </Link>
+            <Link
+              to="/events"
+              onClick={() => setIsOpen(false)}
+              className="text-4xl font-semibold text-white hover:underline"
+            >
+              Events
+            </Link>
+            <Link
+              to="/join"
+              onClick={() => setIsOpen(false)}
+              className="text-4xl font-semibold text-white hover:underline"
+            >
+              Join Us
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setIsOpen(false)}
+              className="text-4xl font-semibold text-white hover:underline"
+            >
+              About
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

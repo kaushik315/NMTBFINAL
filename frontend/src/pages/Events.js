@@ -3,7 +3,7 @@ import React from 'react';
 const Events = () => {
   return (
     <div className="bg-cover bg-center min-h-screen p-8" style={{ backgroundImage: 'url(https://imgur.com/qX4GNcP.png)' }}>
-      <div className="bg-gray-800 bg-opacity-75 p-8 rounded-lg max-w-4xl mx-auto text-center">
+      <div className="bg-gray-800 bg-opacity-75 p-8 rounded-lg max-w-4xl mx-auto text-center mt-12">
         <h1 className="text-4xl font-bold text-white mb-8">Upcoming Events</h1>
         
         {/* Event Card */}

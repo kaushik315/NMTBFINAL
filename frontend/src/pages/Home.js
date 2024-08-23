@@ -3,7 +3,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div className="bg-cover bg-center min-h-screen p-8" style={{ backgroundImage: 'url(https://imgur.com/qX4GNcP.png)' }}>
-      <div className="bg-gray-800 bg-opacity-75 p-8 rounded-lg max-w-4xl mx-auto text-center">
+      <div className="bg-gray-800 bg-opacity-75 p-8 rounded-lg max-w-4xl mx-auto pt-100 text-center mt-12">
         <h1 className="text-4xl font-bold text-white mb-8">Welcome to Napier Mountain Bike Club</h1>
         <p className="text-gray-300 text-lg leading-relaxed mb-4">
           Scotland and mountain biking go hand in hand like chips and cheese or mud and rain. One would pretty much be pointless without the other.
